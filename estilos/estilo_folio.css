@@ -1,0 +1,15 @@
+.contenedor_folio{
+    grid-area: contenedor_folio;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 10px;
+    background-color: antiquewhite;
+    color: rgb(0, 60, 95);
+    border: 1px solid black;    
+    /* display: flex; */
+    flex-wrap: wrap;
+
+}
+.tabla_folio{
+    border: 1px solid black;
+}

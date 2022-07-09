@@ -1,0 +1,116 @@
+
+:root{
+    --color_oscuro:rgb(0, 60, 95);
+    --color_claro_text: #3c8dbc;
+    --color_claro-hover_btn: #3a7999;
+    --color_oscuro_btn: #2c5367;
+    --color_background: rgba(0,0,0,0);
+    --color_blanco_btn: #f2f2f2;
+}
+/* Se va a generar la alineacion de los elementos de todo form */
+.form_Auto{
+    grid-area: form_Auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    margin: 5px;                           /*Con esto se rebajo 20 px quedando en 380 */
+    /* box-shadow: 10px 10px 10px 1px gray; */
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+.titulo{
+    color: var(--color_oscuro);
+    margin-bottom: 10px;
+}
+
+.divmachineID{
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* width: 380px;///////////////////////////// */
+}
+.machineLabel{
+    color: var(--color_oscuro);
+    padding-right: 10%;
+}
+    .machineLabel:hover{
+        color: var(--color_claro_text);   
+    }
+
+    /*transition: all 500ms ease;*/
+#inputMachineID{
+    width: 200px;    
+    
+}
+#inputMachineID:focus{
+    box-shadow:  -2px -2px 10px 1px var(--color_claro_text), 2px 2px 10px 1px var(--color_claro_text);
+    background-color: rgb(227, 223, 161);
+}
+#inputMachine:hover{
+        box-shadow: 0px 0px 10px 3px gray;
+    }
+
+.divAutollenado{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tabla_autollenado{
+    /* text-align: right; */
+    width: 390px;
+    border: 1px solid black;
+}
+td{
+    padding-bottom: 5px;
+}
+.td_entrada{
+    text-align: center  ;
+}
+.td_etiqueta{
+    padding-left: px;
+}
+.inputAutollenado{
+    width:95%;
+    margin-right: 5px;
+    font-size: 14px;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+.inputAutollenado:hover{
+    background: rgba(0,0,0,0);
+    box-shadow: inset 0 0 0 3px #c1c1c1;
+}
+
+.div_select_autollenado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.divBotones{
+    background-color: aliceblue;
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.botones{
+    background-color: var(--color_oscuro_btn);
+    color: var(--color_blanco_btn);
+    border: none;
+    transition: all 500ms ease;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+}
+.botones:hover{
+    background: var(--color_background);
+    color: var(--color_oscuro_btn);
+    box-shadow: inset 0 0 0 3px var( --color_claro-hover_btn) ;
+}
+

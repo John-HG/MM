@@ -1,0 +1,66 @@
+:root{
+    --color: rgb(20, 20, 20);
+    --color_claro: rgba(105, 105, 105, 0.733);
+}
+.contenedor_reloj{
+        /* "Work Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
+    grid-area:contenedor_reloj;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    margin: 10px;
+    height: max-content;
+    font-family: 'Share Tech Mono', monospace;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(39,70,142,1) 100%); 
+}
+
+.div_carcasa{
+    background-color: var(--color);
+    height: 100px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 18px;
+}
+.div_tiempo{
+    margin: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.div_botones_timer{
+    margin-top: 5px;
+    height: max-content;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+/* background-color: aqua; */
+
+}
+
+.btn{
+    background-color: var(--color);
+    border-style: none;
+}
+
+
+.fa-play{
+    color: white;
+}
+.fa-pause{
+    color: white;
+}
+.fa-stop{
+    color: white;
+}
+.fa-split{
+    color:white;
+}
+.fa-flag{
+    color: white;
+}
+
+

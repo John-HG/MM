@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!--version del onedrive-->
+
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Down Time</title>
+    <link rel="stylesheet" href="/estilos/estilo_grid.css">
+    <link rel="stylesheet" href="/estilos/estilo_titulo.css">
+    <link rel="stylesheet" href="/estilos/estilo_form.css">
+    <link rel="stylesheet" href="/estilos/estilo_reloj.css">
+    <link rel="stylesheet" href="/estilos/estilo_folio.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+
+    <script src="https://kit.fontawesome.com/e17299d67a.js" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- se necesitan agregar estas dos lineas para que funcione la verdad no se porque -->
+    <!-- sin el segundo no se puede hacer la transicion del play al stop  -->
+</head>
+<body class = contenedor>
+    <header class="header_Tiulo" >
+        
+    </header>
+    <form class = "form_Auto" >
+        <label class="titulo">REQUISICION DE SERVICIO A:</label>
+    
+        <div class="divmachineID">
+            <label for="inputMachineID" class="machineLabel">Machine ID</label>
+            <input id="inputMachineID" class="inputAutollenado" type="text" placeholder="MACHINE ID">
+        </div>
+        <div class="divAutollenado">
+            <table class="tabla_autollenado">
+                <tr>
+                    <td class="td_etiqueta"><label for="edificioTxt" class="machineLabel">Edificio: </label></td>
+                    <td class="td_entrada"><input class = "inputAutollenado" type="text" placeholder="EDIFICIO" id="edificioTxt"></td>
+                </tr>
+                <tr>
+                    <td class="td_etiqueta"><label for="lineaTxt" class="machineLabel">Linea: </label></td>
+                    <td class="td_entrada"> <input class = "inputAutollenado" type="text" placeholder="LINEA" id="lineaTxt"></td>
+                </tr>
+                <tr>
+                    <td class="td_etiqueta"><label for="area" class="machineLabel">Area: </label></td>
+                    <td class="td_entrada"><input class = "inputAutollenado" type="text" placeholder="AREA" id="area"></td>
+                </tr>
+                <tr>
+                    <td class="td_etiqueta"><label for="equipo" class="machineLabel">Equipo: </label></td>
+                    <td class="td_entrada"><input class = "inputAutollenado" type="text" placeholder="EQUIPO" id="equipo"></td>
+                </tr>
+                <tr>
+                    <td class="td_etiqueta"><label for="select_Departamento" class="machineLabel">Depto:</label></td>
+                    <td class="td_entrada">
+                        <select class="inputAutollenado" id = "select_Departamento">
+                            <option value="">--Departamento--</option>
+                            <option value="equipos">Equipos</option>
+                            <option value="procesos">Procesos</option>
+                            <option value="pruebas">Pruebas</option>
+                            <option value="calidad">Calidad</option>
+                            <option value="it">IT</option>    
+                        </select>    
+                    </td>
+                </tr>
+            </table>  
+        </div>
+        <div class="imagenes">
+            <img src="" alt="" srcset="">
+        </div>
+        <div class="divBotones">
+                <input class="botones" type="reset" value ="Limpiar">
+                <!--input type="button" value="inicio2" onclick="alert('Se guardo el timepo de inicio')"-->
+                <button class="botones" type="button" > Inicio </button>
+                <!-- <input class="botones"  type="submit" value= "Enviar"-->              
+        </div>
+    </form>
+    <div class=" contenedor_reloj" >
+        <div class="div_carcasa">
+            <div class="div_tiempo" id = "div_tiempo">  <!--se tiene que poner la misma etiqueta en id y en class para que el cambio de color funcione-->
+                00:00:00
+            </div>    
+            <div class="div_botones_timer" >
+                <button  class="btn" onclick="iniciar()">
+                    <i class="fa-solid fa-play fa-3x"> </i>
+                </button>
+                <button class="btn" onclick="detener()">
+                    <i class="fa-solid fa-stop fa-3x"> </i> 
+                </button>
+            </div>
+        </div>
+    </div>
+    <form class = "contenedor_folio">    
+        <label for="folioTxt" class="labelFolio">Numero de folio</label>
+        <input type="text" class="inputFolio" id="inputFolio" readonly>
+        <br>    
+        <label for="">Fecha y hora de inicio:</label>
+        <input type="text" name="" id="" class="txt_horaInicio">
+        <br>
+        <label for="">Fecha y hora de termino: </label>
+        <input type="text" name="" id="" class="txt_horaInicio">
+        
+        <table class="tabla_folio">
+            <tr>
+                <td class="td_label_folio"><label for="txt_problema">Problema</label>   </td>
+                <td class="td_entrada_folio"> <input type="text" name="" class="txt_inputs"> </td>
+            </tr>
+            <tr>
+                <td class="td_label_folio"><label for="txt_causa">   Causa</label></td>
+                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+            </tr>
+            <tr>
+                <td class="td_label_folio"><label for="txt_solucion">Solucion</label></td>
+                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+            </tr>
+            <tr>
+                <td class="td_label_folio"><label for="txt_reportado">Reportado</label></td>
+                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+            </tr>
+            <tr>
+                <td class="td_label_folio"><label for="txt_firmado">Firmado</label></td>
+                <td class="td_entrada_folio"> <input type="text" name="" class="txt_inputs"></td>
+            </tr>
+    
+        </table>
+        
+        <label for="">Tiempo total que se generara </label>
+        <br>
+        <label for=""> Tipo de paro </label>
+        <div>
+            <input type="radio" name = "time" value="intermitente" id="intermitente">
+            <label for="intermitente">Intermitente</label>
+            <input type="radio" name = "time" value ="total" id="total">
+            <label for="total">Total</label>
+        </div>       
+    </form>
+    <script src="/programacion_reloj.js"></script>
+</body>
+</html>
