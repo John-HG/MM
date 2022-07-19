@@ -1,15 +1,86 @@
+:root{
+    --colortexto:rgb(0, 60, 95);
+}
+
 .contenedor_folio{
     grid-area: contenedor_folio;
     font-size: 20px;
     font-weight: 700;
     margin: 20px 10px;
-    background-color: antiquewhite;
-    color: rgb(0, 60, 95);
+    color: var(--colortexto);
     border: 1px solid black;    
-    /* display: flex; */
-    flex-wrap: wrap;
+    border-radius: 15px;
+    height: 32.5vh;
+    display: grid;
+    grid-template:
+    "folio"
+    "llenado"
+    "botones_folio";
+    justify-content: stretch;
+
+    
+}
+
+@media(min-width: 840px){
+    .contenedor_folio{
+
+        grid-template: 
+        "folio          llenado" 
+        /* "folio llenado" */
+        "botones_folio        ."/
+            50%           50% ;
+        /* justify-content: stretch; */
+        }
+}
+  
+.tabla_folio{
+    grid-area: folio;
+    border: 1px solid black;
+    height: 80%;
+    /* margin-right: auto; */
 
 }
-.tabla_folio{
+.tabla_llenado{
+    grid-area: llenado;
     border: 1px solid black;
+    /* margin: 5px; */
+    /* justify-content: stretch; */
+    height: 100%;
+    /* width: fit-content; */
+
+}
+
+.div_boton_mandar{
+    grid-area: botones_folio;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-around;
+}
+/* tabla folio  */
+.td_label_folio{
+    background-color: aqua;
+    width: 38%;
+}
+.td_entrada_folio{
+    text-align: center;
+    background-color: orange;   
+    
+}
+.input_tabla_folio{
+    width: 70%;
+    height: 90%;
+}
+
+
+.td_entrada_llenadofolio{
+    vertical-align: super;
+/* background-color: blue; */
+}
+
+.text_area{
+    max-height: 70px;
+    min-height: 70px;
+    max-width:max-content;
+    min-width:max-content;
+    
 }

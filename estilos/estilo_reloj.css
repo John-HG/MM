@@ -1,6 +1,9 @@
 :root{
     --color: rgb(20, 20, 20);
     --color_claro: rgba(105, 105, 105, 0.733);
+    --color_oscuro_btn: #2c5367;
+    --colortexto:rgb(0, 60, 95)
+    /* --color_oscuro_btn: #664822; */
 }
 .contenedor_reloj{
         /* "Work Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
@@ -9,26 +12,35 @@
     flex-direction: column;
     align-items:center ;
     justify-content: center;
-    margin: 10px;
-    height: max-content;
+    margin: 5px;
+    
     font-family: 'Share Tech Mono', monospace;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(39,70,142,1) 100%); 
+    /* background: rgb(2,0,36); */
+    /* background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(39,70,142,1) 100%);  */
+}
+.aviso_tiempo{
+    /* background-color:bisque ; */
+    margin-top: 3px;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 600;
+    color: white;
+    font-size: 15px;
 }
 
 .div_carcasa{
-    background-color: var(--color);
-    height: 100px;
-    width: 150px;
+    background-color: var(--color_oscuro_btn);
+    height: 100%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 18px;
+    border-style: solid;
 }
 .div_tiempo{
     margin: 10px;
     color: white;
-    font-size: 25px;
+    font-size: 50px;
     font-weight: 600;
 }
 .div_botones_timer{
@@ -42,10 +54,16 @@
 }
 
 .btn{
-    background-color: var(--color);
+    background-color: var(--color_oscuro_btn);
+    /* background-color: white; */
     border-style: none;
 }
 
+.aviso_botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .fa-play{
     color: white;

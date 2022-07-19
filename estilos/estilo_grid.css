@@ -26,16 +26,17 @@ body {
   grid-template: 
   "header_Tiulo"     60px
   "form_Auto"        45vh
-  "contenedor_reloj" 120px
+  "contenedor_reloj" 150px
   "contenedor_folio" 400px/
       auto;
+
 }
-@media(min-width: 800px){
+@media(min-width: 840px){
   .contenedor{
     grid-template: 
     "header_Tiulo     header_Tiulo"    60px
-    "form_Auto    contenedor_reloj" 10vh
+    "form_Auto    contenedor_reloj" 15%
     "form_Auto    contenedor_folio" 35vh /
-          400px         auto;
+          30%         70%;
   }
 }

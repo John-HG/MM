@@ -38,6 +38,28 @@
         <div class="divAutollenado">
             <table class="tabla_autollenado">
                 <tr>
+                    <td class="td_etiqueta"><label for="select_Departamento" class="machineLabel">Depto:</label></td>
+                    <td class="td_entrada">
+                        <select class="inputAutollenado" id = "select_Departamento">
+                            <option value="">--Departamento--</option>
+                            <option value="equipos">Equipos</option>
+                            <option value="feeders">Feeders</option>
+                            <option value="programacion">Programacion</option>
+                            <option value="paro_calidad">Paro por calidad</option>
+                            <option value="ctrl_produccion">Ctrl de produccion</option>
+                            <option value="preekiteos">Preekiteos</option>
+                            <option value="pruebas">Pruebas</option>
+                            <option value="procesos">Procesos</option>
+                            <option value="producto">Producto</option>
+                            <option value="produccion">Produccion</option>
+                            <option value="planta">Planta</option>                            
+                            <option value="calidad">Calidad</option>    
+                            <option value="it">IT</option>    
+                            
+                        </select>    
+                    </td>
+                </tr>
+                <tr>
                     <td class="td_etiqueta"><label for="edificioTxt" class="machineLabel">Edificio: </label></td>
                     <td class="td_entrada"><input class = "inputAutollenado" type="text" placeholder="EDIFICIO" id="edificioTxt"></td>
                 </tr>
@@ -54,89 +76,103 @@
                     <td class="td_entrada"><input class = "inputAutollenado" type="text" placeholder="EQUIPO" id="equipo"></td>
                 </tr>
                 <tr>
-                    <td class="td_etiqueta"><label for="select_Departamento" class="machineLabel">Depto:</label></td>
-                    <td class="td_entrada">
-                        <select class="inputAutollenado" id = "select_Departamento">
-                            <option value="">--Departamento--</option>
-                            <option value="equipos">Equipos</option>
-                            <option value="procesos">Procesos</option>
-                            <option value="pruebas">Pruebas</option>
-                            <option value="calidad">Calidad</option>
-                            <option value="it">IT</option>    
-                        </select>    
-                    </td>
+                    <td class="td_etiqueta"><label for="subarea" class="machineLabel">Sub-Area</label></td>
+                    <td class="td_entrada"><input  class="inputAutollenado" type="text" placeholder="Sub-Area" id="subarea"></td>
                 </tr>
+                <tr>
+                    <td class="td_etiqueta"><label for="problemaTxt" class="machineLabel">Problema</label></td>
+                    <td class="td_entrada"><textarea name="" id="problemaTxt" cols="34" rows="5"></textarea> </td>
+                </tr>
+                
             </table>  
-        </div>
+                    </div>
         <div class="imagenes">
             <img src="" alt="" srcset="">
         </div>
         <div class="divBotones">
-                <input class="botones" type="reset" value ="Limpiar">
+                <!-- <input class="botones" type="reset" value ="Limpiar"> -->
                 <!--input type="button" value="inicio2" onclick="alert('Se guardo el timepo de inicio')"-->
-                <button class="botones" type="button" > Inicio </button>
+                <button class="botones" type="button" onclick="generar_folio()"> Reportar </button>
                 <!-- <input class="botones"  type="submit" value= "Enviar"-->              
         </div>
     </form>
     <div class=" contenedor_reloj" >
+        
         <div class="div_carcasa">
+           
             <div class="div_tiempo" id = "div_tiempo">  <!--se tiene que poner la misma etiqueta en id y en class para que el cambio de color funcione-->
                 00:00:00
             </div>    
             <div class="div_botones_timer" >
                 <button  class="btn" onclick="iniciar()">
-                    <i class="fa-solid fa-play fa-3x"> </i>
+                    <i class="fa-solid fa-play fa-2x"> </i>
                 </button>
                 <button class="btn" onclick="detener()">
-                    <i class="fa-solid fa-stop fa-3x"> </i> 
+                    <i class="fa-solid fa-stop fa-2x"> </i> 
                 </button>
+            </div>
+            <div class="aviso_tiempo">
+                <label for="" class="avisos_de_tiempo">Inicio de soporte</label>
             </div>
         </div>
     </div>
     <form class = "contenedor_folio">    
-        <label for="folioTxt" class="labelFolio">Numero de folio</label>
-        <input type="text" class="inputFolio" id="inputFolio" readonly>
-        <br>    
-        <label for="">Fecha y hora de inicio:</label>
-        <input type="text" name="" id="" class="txt_horaInicio">
-        <br>
-        <label for="">Fecha y hora de termino: </label>
-        <input type="text" name="" id="" class="txt_horaInicio">
-        
+        <!-- tabla de llando del folio y de los tiempos de inicio del soporte -->
         <table class="tabla_folio">
             <tr>
-                <td class="td_label_folio"><label for="txt_problema">Problema</label>   </td>
-                <td class="td_entrada_folio"> <input type="text" name="" class="txt_inputs"> </td>
+                <td class="td_label_folio"><label for="folioTxt" class="labelFolio">Numero de folio</label></td>
+                <td class="td_entrada_folio"><input type="text" class="input_tabla_folio" id="inputFolio" readonly></td>
             </tr>
             <tr>
-                <td class="td_label_folio"><label for="txt_causa">   Causa</label></td>
-                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+                <td class="td_label_folio"><label for="">Hora de reporte:</label></td>
+                <td class="td_entrada_folio"><input type="text" name="" id="fecha_reporte" class="input_tabla_folio" readonly></td>
             </tr>
             <tr>
-                <td class="td_label_folio"><label for="txt_solucion">Solucion</label></td>
-                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+                <td class="td_label_folio"><label for="">Inicio del soporte : </label></td>
+                <td class="td_entrada_folio"><input type="text" name="" id="fecha_soporte" class="input_tabla_folio"></td>
             </tr>
             <tr>
-                <td class="td_label_folio"><label for="txt_reportado">Reportado</label></td>
-                <td class="td_entrada_folio"><input type="text" name="" class="txt_inputs"></td>
+                <td class="td_label_folio"><label for="">Fin del soporte : </label></td>
+                <td class="td_entrada_folio"><input type="text" name="" id="fecha_soporte" class="input_tabla_folio"></td>
             </tr>
             <tr>
-                <td class="td_label_folio"><label for="txt_firmado">Firmado</label></td>
-                <td class="td_entrada_folio"> <input type="text" name="" class="txt_inputs"></td>
+                <td class="td_label_folio"><label for="">Tiempo estimado: </label></td>
+                <td class="td_entrada_folio"><input type="text" name="" id="fecha_soporte" class="input_tabla_folio"></td>
             </tr>
-    
+
         </table>
+       <div class="div_boton_mandar">
+            <button class="botones" type="button" > Mandar Reporte </button>
+            <button class="botones" type="button"> Ver historial de Dt </button>
+        </div> 
+
+        <!-- Tabla de llanado del problema  -->
+        <table class="tabla_llenado">
+            <tr>
+                <td class="td_label_llenadofolio"><label class="llenado_problema" for="subSistema_txt">Subsistema:</label></td>
+                <td class="td_entrada_llenadofolio"> <input type="text" name="" class="txt_inputs" id="subSistema_txt"> </td>
+            </tr>
+            <tr>
+                <td valign="top" class="td_label_llenadofolio"><label class="llenado_problema" for="problema_txt">Problema:</label></td>
+                <td class="td_entrada_llenadofolio"><textarea name="" class="text_area" id="problema_txt" rows="5" cols="50" ></textarea></td>
+                    <!-- <input type="text" name="" class="txt_inputs" id="problema_txt"> -->
+            </tr>
+            <tr>
+                <td valign="top" class="td_label_llenadofolio"><label class="llenado_problema" for="causa_txt">Causa:</label></td>
+                <td class="td_entrada_llenadofolio"><textarea name="" class="text_area" id="causa_txt" rows="5" cols="50" ></textarea></td>
+                <!-- <td class="td_entrada_llenadofolio"><input type="text" name="" class="causa_txt"></td> -->
+            </tr>
+            <tr>
+                <td valign = "top"class="td_label_llenadofolio"><label class="llenado_problema" for="solucion_txt">Solucion:</label></td>
+                <!-- <td class="td_entrada_llenadofolio"><input type="text" name="" class="solucion_txt"></td> -->
+                <td class="td_entrada_llenadofolio"><textarea name="" class="text_area" id="solucion_txt" rows="5" cols="50" ></textarea></td>
+            </tr>
+        </table>
+        <!-- Tabla de tipo de tiempo  -->
         
-        <label for="">Tiempo total que se generara </label>
-        <br>
-        <label for=""> Tipo de paro </label>
-        <div>
-            <input type="radio" name = "time" value="intermitente" id="intermitente">
-            <label for="intermitente">Intermitente</label>
-            <input type="radio" name = "time" value ="total" id="total">
-            <label for="total">Total</label>
-        </div>       
+         
     </form>
     <script src="/programacion_reloj.js"></script>
+    <script src="/modal_usuario.js"></script>
 </body>
 </html>

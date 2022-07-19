@@ -2,6 +2,12 @@
 const btn = document.querySelector(".fa-play")
 const btn_stop = document.querySelector(".fa-stop") ///////////////////////////////////////////////////////////1
 let html_folio = document.getElementById("inputFolio")
+let html_fecha_reporte =document.getElementById('fecha_reporte')
+let html_fecha_soporte = document.getElementById('fecha_soporte')
+let html_ID = document.getElementById('inputMachineID')
+let fecha= new Date()
+let id_actual 
+let estado_timer_inicial 
 // const html_folio = document.querySelector(".inputFolio")// elemento del input del folio 
 
 //variables para generar el folio 
@@ -16,17 +22,22 @@ let cronometrar
 // parte de cambio se estados del boton 
 
 function iniciar(){
-    btn.classList.toggle('fa-pause')  // cambiamos el valor de la clase por el simbolo de pausa 
-    estado = !estado    //utilizamos el mismo comparador para cambiar el estado de la variable 
-    if (btn_stop.classList.contains("fa-scissors")) {
-        console.log('esta en clase scissors');
-    } else {
-        console.log('no esta en scissors');
+    if (html_ID.value == "") {
+        alert("Campos necesarios incompletos")
     }
-    pausar(estado)  //mandamos todo al valor de estado 
-    generarfolio()
+    else{
+        btn.classList.toggle('fa-pause')  // cambiamos el valor de la clase por el simbolo de pausa 
+        estado = !estado    //utilizamos el mismo comparador para cambiar el estado de la variable 
+        estado_timer_inicial = true
+        if (btn_stop.classList.contains("fa-scissors")) {
+            console.log('esta en clase scissors');
+        } else {
+            console.log('no esta en scissors');
+        }
+        pausar(estado)  //mandamos todo al valor de estado 
+        comenzar_timer()
+    }
     
-
 }   
 
 function pausar(value){
@@ -48,29 +59,16 @@ function detener(){
         cronometrar = false
         acumulado = 0
         btn.classList.toggle('fa-pause')
-        // html_folio.value = ""
+        html_folio.value = ""
+        estado_timer_inicial = false
+
     } else {
         cronometrar = false 
         acumulado = 0
-        console.log('el timpo se detuvo')
-        html_folio.value = ""
+        console.log('el timpo se detuvo 1')
+        // html_folio.value = ""
         
     }
-}
-
-//generar el folio que se va a tomar en cuenta en el 
-function generarfolio(){
-    if (estado == true && acumulado== 0) {
-        
-        html_folio.value = folio
-        folio = folio+1
-    }
-    else{
-
-    }
-   
-        
-
 }
 // parte para realizar el ajuste del reloj 
 
@@ -96,5 +94,37 @@ function formatear(tiempo_ms){
     return H.ceros(2) + ":" + M.ceros(2) + ":" + S.ceros(2)
         //+ "." + MS.ceros(3)
 }
+//aqui se asigna el tiempo en el que se comenzo a trabajar por parte del tecnivo  
+function comenzar_timer(){
+    if (estado == true && acumulado == 0 ) {
+        let fecha_soporte = fecha.toLocaleString('en-US')
+        html_fecha_soporte.value= fecha_soporte
+    }
+    else{
+        html_fecha_soporte.value = ("")
+    }    
 
-// 
+}
+// aqui se asigna el tiempo en el que se realizo el reporte de la falla
+function generar_folio(){
+    if (html_ID.value == "") {
+        alert("Campos necesarios incompletos")
+    }
+    else{
+        
+        let fecha_1 = fecha.toLocaleString('en-US')
+        let hora = fecha.toLocaleTimeString()
+        let dia =fecha.toLocaleDateString()
+        let opcion=confirm("Se genero el siguiente folio: "+ folio + "\n" + "Fecha: "+ fecha_1)
+        if (opcion == true) {
+            alert("Se genero exitosamente el reporte")
+            html_folio.value=folio
+            html_fecha_reporte.value = fecha_1
+            
+        } else {
+            alert("Se cancelo el reporte de down time ")
+        }
+        folio = folio+1
+    }
+    
+} 

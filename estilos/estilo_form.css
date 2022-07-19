@@ -66,15 +66,23 @@
     width: 390px;
     border: 1px solid black;
 }
-td{
-    padding-bottom: 5px;
-}
 .td_entrada{
-    text-align: center  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+
 }
 .td_etiqueta{
-    padding-left: px;
+    /* padding-left: px; */
 }
+#problemaTxt{
+    max-width: 250px;
+    max-height: 80px;
+    /* min-width: 250px; */
+    min-height: 80px;
+}
+
 .inputAutollenado{
     width:95%;
     margin-right: 5px;
