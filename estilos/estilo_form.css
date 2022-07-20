@@ -25,10 +25,11 @@
 .titulo{
     color: var(--color_oscuro);
     margin-bottom: 10px;
+    border-bottom: 2px solid black;
 }
 
 .divmachineID{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -65,7 +66,7 @@
 .tabla_autollenado{
     /* text-align: right; */
     width: 390px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .td_entrada{
     display: flex;

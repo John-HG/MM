@@ -16,6 +16,7 @@
     /* min-height: 32.5vh;    esta linea no funciona  */
     display: grid;
     grid-template:
+    "contenedor_reloj"
     "folio"
     "llenado"
     "botones_folio";
@@ -27,7 +28,8 @@
 @media(min-width: 840px){
     .contenedor_folio{
         grid-template: 
-        "folio          llenado" 
+        "contenedor_reloj contenedor_reloj" 33%
+        "folio          llenado" auto
         /* "folio llenado" */
         "botones_folio        ."/
             50%           50% ;
@@ -37,14 +39,14 @@
   
 .tabla_folio{
     grid-area: folio;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 80%;
     /* margin-right: auto; */
 
 }
 .tabla_llenado{
     grid-area: llenado;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* margin: 5px; */
     /* justify-content: stretch; */
     height: 100%;

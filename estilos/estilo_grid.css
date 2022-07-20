@@ -27,7 +27,7 @@ body {
   grid-template: 
   "header_Tiulo"     60px
   "form_Auto"        50%
-  "contenedor_reloj" 15%
+  /* "contenedor_reloj" 15% */
   "contenedor_folio" auto/
       auto;
 
@@ -37,8 +37,8 @@ body {
   .contenedor{
     grid-template: 
     "header_Tiulo     header_Tiulo"    60px
-    "form_Auto    contenedor_reloj" 15%
-    "form_Auto    contenedor_folio" 35% /
+    /* "form_Auto    contenedor_reloj" 15% */
+    "form_Auto    contenedor_folio" 50% /
           30%         70%;
   }
 }

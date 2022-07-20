@@ -106,32 +106,35 @@
                 <!-- <input class="botones"  type="submit" value= "Enviar"-->              
         </div>
     </form>
-    <div class=" contenedor_reloj" >
-        
-        <div class="div_carcasa">
-           
-            <div class="div_tiempo" id = "div_tiempo">  <!--se tiene que poner la misma etiqueta en id y en class para que el cambio de color funcione-->
-                00:00:00
-            </div>    
-            <div class="div_botones_timer" >
-                <button  class="btn" onclick="iniciar()">
-                    <i class="fa-solid fa-play fa-2x"> </i>
-                </button>
-                <button class="btn" onclick="detener()">
-                    <i class="fa-solid fa-stop fa-2x"> </i> 
-                </button>
-            </div>
-            <div class="aviso_tiempo">
-                <label for="" class="avisos_de_tiempo">Inicio de soporte</label>
-            </div>
-        </div>
-    </div>
+    
     <form class = "contenedor_folio">    
         <!-- tabla de llando del folio y de los tiempos de inicio del soporte -->
+        <div class=" contenedor_reloj" >
+            <div class="div_etiqueta_aviso">
+                <label class= "titulo"for="">REGISTRO DEL SOPORTE:</label>
+            </div>
+        
+            <div class="div_carcasa">
+               
+                <div class="div_tiempo" id = "div_tiempo">  <!--se tiene que poner la misma etiqueta en id y en class para que el cambio de color funcione-->
+                    00:00:00
+                </div>    
+                <div class="div_botones_timer" >
+                    <button  class="btn" onclick="iniciar()">
+                        <label for="" class="aviso_botones"> Inicio</label>
+                        <i class="fa-solid fa-play fa-2x"> </i>
+                    </button>
+                    <button class="btn" onclick="detener()">
+                        <label for="" class="aviso_botones">Fin</label>
+                        <i class="fa-solid fa-stop fa-2x"> </i> 
+                    </button>
+                </div>
+                <!-- <div class="aviso_tiempo">
+                    <label for="" class="avisos_de_tiempo">Inicio de soporte</label>
+                </div> -->
+            </div>
+        </div>
         <table class="tabla_folio">
-            <tr>
-                <td colspan="2" class="td_lable_folio"> hola mundo</td>
-            </tr>
             <tr>
                 <td class="td_label_folio"><label for="folioTxt" class="labelFolio">Numero de folio</label></td>
                 <td class="td_entrada_folio"><input type="text" class="input_tabla_folio" id="inputFolio" readonly></td>

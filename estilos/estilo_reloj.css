@@ -16,6 +16,9 @@
     font-family: 'Share Tech Mono', monospace;
     
 }
+.div_etiqueta_aviso{
+    margin-bottom: 7px;
+}
 .aviso_tiempo{
     /* background-color:bisque ; */
     margin-top: 3px;
@@ -52,15 +55,17 @@
 }
 
 .btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
     background-color: var(--color_oscuro_btn);
     /* background-color: white; */
     border-style: none;
 }
 
 .aviso_botones{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: medium;
 }
 
 .fa-play{
