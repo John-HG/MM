@@ -6,24 +6,26 @@
     grid-area: contenedor_folio;
     font-size: 20px;
     font-weight: 700;
-    margin: 20px 10px;
+    /* background-color: blue; */
+    min-width: auto;
+    /* margin: 20px 10px; */
+    margin: 5px;
     color: var(--colortexto);
     border: 1px solid black;    
     border-radius: 15px;
-    height: 32.5vh;
+    /* min-height: 32.5vh;    esta linea no funciona  */
     display: grid;
     grid-template:
     "folio"
     "llenado"
     "botones_folio";
-    justify-content: stretch;
+    /* justify-content: stretch; */
 
     
 }
 
 @media(min-width: 840px){
     .contenedor_folio{
-
         grid-template: 
         "folio          llenado" 
         /* "folio llenado" */
@@ -58,12 +60,12 @@
 }
 /* tabla folio  */
 .td_label_folio{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 38%;
 }
 .td_entrada_folio{
     text-align: center;
-    background-color: orange;   
+    /* background-color: orange;    */
     
 }
 .input_tabla_folio{

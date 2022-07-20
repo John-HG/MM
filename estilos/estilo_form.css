@@ -10,6 +10,7 @@
 /* Se va a generar la alineacion de los elementos de todo form */
 .form_Auto{
     grid-area: form_Auto;
+    
     display: flex;
     flex-direction: column;
     align-items: center;

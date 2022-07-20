@@ -23,20 +23,23 @@ body {
   display:grid;
   height: 100%;
   /* gap: 5px; */
+  /* overflow: scroll; */
   grid-template: 
   "header_Tiulo"     60px
-  "form_Auto"        45vh
-  "contenedor_reloj" 150px
-  "contenedor_folio" 400px/
+  "form_Auto"        50%
+  "contenedor_reloj" 15%
+  "contenedor_folio" auto/
       auto;
 
 }
-@media(min-width: 840px){
+/* 780 */
+@media(min-width: 1321px){
   .contenedor{
     grid-template: 
     "header_Tiulo     header_Tiulo"    60px
     "form_Auto    contenedor_reloj" 15%
-    "form_Auto    contenedor_folio" 35vh /
+    "form_Auto    contenedor_folio" 35% /
           30%         70%;
   }
 }
+

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/estilos/estilo_folio.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" hr   ef="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
 
@@ -26,7 +26,17 @@
 </head>
 <body class = contenedor>
     <header class="header_Tiulo" >
-        
+        <div class="diviconoUsuario">
+            <img src="/imagenes/iconos/Usuario.png" class ="iconoUsuario">
+            <label class="nombreUsuario">Usuario </label>
+         </div>
+         <div class="divTitulo">
+             <img src="/imagenes/iconos/down_time.png" class="iconoTitulo">  
+         </div>
+         <div class="divExit">
+             <img src="/imagenes/iconos/Exit.png" class="iconoExit">
+             <label class="labelExit"> Exit</label>
+         </div>
     </header>
     <form class = "form_Auto" >
         <label class="titulo">REQUISICION DE SERVICIO A:</label>
@@ -119,6 +129,9 @@
     <form class = "contenedor_folio">    
         <!-- tabla de llando del folio y de los tiempos de inicio del soporte -->
         <table class="tabla_folio">
+            <tr>
+                <td colspan="2" class="td_lable_folio"> hola mundo</td>
+            </tr>
             <tr>
                 <td class="td_label_folio"><label for="folioTxt" class="labelFolio">Numero de folio</label></td>
                 <td class="td_entrada_folio"><input type="text" class="input_tabla_folio" id="inputFolio" readonly></td>
