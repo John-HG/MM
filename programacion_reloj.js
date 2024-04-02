@@ -1,4 +1,5 @@
-//let es para variables que se pueden fenerar en ejecucion y const pues obvi son constantes 
+//let te permite declarar variables limitando su alcance (scope) al bloque, declaración, o expresión donde se está usando
+// y const pues obvi son constantes 
 const btn = document.querySelector(".fa-play")
 const btn_stop = document.querySelector(".fa-stop") ///////////////////////////////////////////////////////////1
 let html_folio = document.getElementById("inputFolio")
@@ -13,13 +14,13 @@ let estado_timer_inicial
 //variables para generar el folio 
 let  folio =1
 const limite_max = 1000000 //valor maximo del folio 
-//variable para el cambio de el el icono de play a pause 
+//variable para cambiar el icono de play a pause 
 let estado = false
 // variables para el reloj que se quiere hacer 
 let tiempoRef= Date.now()
 let acumulado = 0
 let cronometrar
-// parte de cambio se estados del boton 
+// parte de cambio de estados del boton 
 
 function iniciar(){
     if (html_ID.value == "") {
@@ -41,7 +42,7 @@ function iniciar(){
 }   
 
 function pausar(value){
-    if(value == true){
+    if(value){
         console.log(value);
         console.log("El tiempo comenzo")
         cronometrar= true
@@ -53,7 +54,7 @@ function pausar(value){
     } 
 }
 function detener(){
-    if (estado == true) {
+    if (estado) {
         estado= !estado
         console.log("el tiempo se detuvo")
         cronometrar = false
@@ -94,9 +95,9 @@ function formatear(tiempo_ms){
     return H.ceros(2) + ":" + M.ceros(2) + ":" + S.ceros(2)
         //+ "." + MS.ceros(3)
 }
-//aqui se asigna el tiempo en el que se comenzo a trabajar por parte del tecnivo  
+//aqui se asigna el tiempo en el que se comenzo a trabajar por parte del tecnico  
 function comenzar_timer(){
-    if (estado == true && acumulado == 0 ) {
+    if (estado && acumulado == 0 ) {
         let fecha_soporte = fecha.toLocaleString('en-US')
         html_fecha_soporte.value= fecha_soporte
     }
@@ -124,7 +125,7 @@ function generar_folio(){
         } else {
             alert("Se cancelo el reporte de down time ")
         }
-        folio = folio+1
+        folio++
     }
     
 } 
